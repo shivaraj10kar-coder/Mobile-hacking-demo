@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Scan Demo</title>
+<style>
+body {
+  background: #050505;
+  color: #00ff90;
+  font-family: monospace;
+  text-align: center;
+  padding: 30px 15px;
+}
+.box {
+  border: 1px solid #00ff90;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 40px;
+}
+button {
+  background: #00ff90;
+  color: black;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+#output {
+  margin-top: 25px;
+  line-height: 2;
+}
+</style>
+</head>
+<body>
+
+<h1>CYBER SCANNER</h1>
+<p>Safe hacking simulation</p>
+
+<div class="box">
+  <p>Demo only — no real data access</p>
+  <button onclick="startScan()">START SCAN</button>
+  <div id="output"></div>
+</div>
+
+<script>
+function startScan() {
+  const out = document.getElementById("output");
+  out.innerHTML = "Initializing demo...";
+
+  const messages = [
+    "Connecting to demo...",
+    "Scanning simulation...",
+    "Checking demo security...",
+    "No personal data accessed.",
+    "Demo scan complete!"
+  ];
+
+  let i = 0;
+
+  const timer = setInterval(() => {
+    out.innerHTML += "<br>" + messages[i];
+    i++;
+
+    if (i >= messages.length) {
+      clearInterval(timer);
+    }
+  }, 1200);
+}
+</script>
+
+</body>
+  </html>
+  
